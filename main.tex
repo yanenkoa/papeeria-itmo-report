@@ -1,0 +1,98 @@
+% Шаблон отчёта по лабораторным работам (Версия от 15.02.2016)
+% предназначен для использования студентами каф. ПМиИ СамГТУ
+% при оформлении отчетов по лабораторным работам. 
+% Для настройки пакета listigs использовался материал 
+% статьи Михаила Конника aka virens
+% <http://mydebianblog.blogspot.ru/2012/12/latex.html>
+% Copyright (c) 2016 by Mikhail Saushkin (msaushkin@gmail.com) 
+% All rights reserved except the rights granted by the
+% Creative Commons Attribution 4.0 International
+% <https://creativecommons.org/licenses/by/4.0/>
+% Свежая версия шаблона здесь <https://www.overleaf.com/read/sqvxbnhgxxdm>
+\documentclass[12pt]{report}
+\usepackage[a4paper, mag=1000, left=3cm, right=1.5cm, top=0cm, bottom=2cm, headheight=1.82cm, headsep=0.15cm, includehead, includefoot]{geometry}
+% \usepackage[T1]{fontenc}
+% \usepackage[libertine]{newtxtext}
+% \usepackage{librebaskerville}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{tempora}
+\usepackage{newtxmath}
+\usepackage{titlesec} 
+\usepackage{caption}
+\usepackage{fancyhdr}
+\usepackage{indentfirst}
+
+
+% \pagestyle{myheadings}
+% \setlength{\headerskip}{3cm}
+
+% \lhead{}
+% \chead{}
+% \rhead{}
+% \lfoot{}
+% \cfoot{}
+% \rfoot{}
+\fancyhf{}
+\chead{
+% {\setstretch{1.5}
+\thepage
+% }
+}
+\renewcommand{\headrulewidth}{0pt}
+
+\pagestyle{fancy}
+
+\renewcommand{\baselinestretch}{1.5}
+
+\setlength{\parindent}{1.25cm}
+
+\def\thesection{\arabic{section}}
+\titleformat{\section}{\large\center\bf}{\thesection.}{0.3cm}{\MakeUppercase}
+\titlespacing*{\chapter}{0.63cm}{24pt}{12pt}
+
+\begin{document}
+% Переоформление некоторых стандартных названий
+\def\contentsname{Содержание}
+
+% Оформление титульного листа
+\begin{titlepage}
+
+\newgeometry{a4paper, mag=1000, left=3cm, right=1.5cm, top=0cm, bottom=2.2cm, headheight=1.82cm, headsep=0cm, includehead, ignorefoot}
+\begin{center}
+\textsc{МИНИСТЕРСТВО ОБРАЗОВАНИЯ И НАУКИ РОССИЙСКОЙ ФЕДЕРАЦИИ\\
+УНИВЕРСИТЕТ ИТМО\\
+Кафедра высокопроизводительных вычислений
+}
+
+\vspace{6.68cm}
+
+\textbf{\large ОТЧЁТ}\\[4.5mm]
+О выполнении лабораторной работы № 4\\
+«Симулирование $n$ тел с помощью графического процессора и технологии CUDA»\\[18mm]
+\end{center}
+% \vspace{0.1cm}
+\hspace{\fill}
+\begin{minipage}{.48\textwidth}
+\textbf{Работу выполнил:}\\
+ст. группы М4117 Яненко А.С.\\
+\textbf{Работу принял:}\\
+\hspace*{3.25cm} Болгова Е.В.\\
+\end{minipage}
+\vfill
+\begin{center}
+Санкт-Петербург\\
+2017
+\end{center}
+\end{titlepage}
+
+\restoregeometry
+
+% Содержание
+% \tableofcontents
+
+\setcounter{page}{2}
+
+\input{lab1}
+
+\end{document}
